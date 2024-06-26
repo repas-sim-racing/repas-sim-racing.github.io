@@ -181,6 +181,38 @@
             max-width: 600px;
             font-size: 20px;
         }
+        #preorder {
+            min-height: 400px;
+            background: url('./bg-dark-orange.png') center center / cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .preorder-button {
+            background-color: #555;
+            border: 2px solid #333;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+            box-shadow: 2px 2px 5px #000;
+            transition: all 0.3s ease;
+        }
+        .preorder-button:hover {
+            background-color: #777;
+            box-shadow: 2px 2px 10px #000;
+        }
+        .preorder-button:active {
+            background-color: #333;
+            box-shadow: inset 2px 2px 5px #000;
+        }
     </style>
 </head>
 <body>
@@ -219,7 +251,7 @@
     <img src="pcb.jpg" alt="PCB">
     <div class="description">
         <p>
-            We designed and iterated our own PCBs. They are exclusively built and engineered for RSR DT product lines. This way we have full control of innovation and improvement. With our own PCB, we are able to transform the servo motor into a sleek appearance by eliminating the bulky power and encoder sockets. No more messy cables.
+            To have full control of innovation and improvements, we designed and iterated our own PCBs that are exclusively built and engineered for RSR DT product lines. This enable us to transform the servo motor into a sleek appearance by eliminating the bulky power and encoder sockets. No more messy cables.
         </p>
     </div>
 </section>
@@ -245,9 +277,6 @@
         <li>4-pin Molex connector for Emergency Stop (sold separately)</li>
         <li>RSR Paddock software for wheelbase configuration</li>
     </ul>
-    
-</section>
-<section id="specification">
     <h2>Specification:</h2>
     <ul>
         <li>Platform: Windows PC</li>
@@ -274,6 +303,20 @@
         <li>Emergency Stop Switch: supported via 4-pin molex connector (sold separately)</li>
         <li>Mounting bracket: included (4mm steel plates)</li>
     </ul>
+    <h2>Third-party softwares:</h2>
+    <ul>
+        <li>OpenFFBoard (MIT) - <a href="https://github.com/tauri-apps/tauri" target="_blank"/>https://github.com/Ultrawipf/OpenFFBoard</a></li>
+        <li>Tauri (MIT) - <a href="https://github.com/tauri-apps/tauri" target="_blank">https://github.com/tauri-apps/tauri</a></li>
+    </ul>
+
+    <h2>Downloads:</h2>
+    <ul>
+        <li><a href="https://github.com/repas-sim-racing/rsr-dt-x20/releases" target="_blank">User manual</a></li>
+        <li><a href="https://github.com/repas-sim-racing/rsr-paddock" target="_blank">RSR Paddock software</a></li>
+</section>
+
+<section id="preorder">
+<a href="mailto:foo@bar.com" class="preorder-button">Pre-order Now</a>
 </section>
 
 </body>
