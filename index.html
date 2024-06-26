@@ -3,65 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSR</title>
-    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <title>Seven Sections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background: linear-gradient(135deg, #000 0%, #434343 100%);
-            color: #fff;
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+        section {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             text-align: center;
-            animation: gradientMovement 10s infinite alternate linear;
-        }
-        .container {
-            max-width: 800px;
+            width: 100%;
+            transition: background-color 0.5s ease;
+            box-sizing: border-box;
             padding: 20px;
-            border-radius: 10px;
         }
-        h1 {
-            font-size: 2.5em;
+        #section1 {
+            height: 100vh; /* Height of the screen */
+            background: linear-gradient(45deg, #333333, #555555);
+            background-size: 200% 200%;
+            color: white;
+            flex-direction: column;
+            position: relative;
+        }
+        #section1 h1, #section1 h2 {
+            margin: 10px 0;
+        }
+        #section1 h1 {
+            font-size: 48px;
+        }
+        #section1 h2 {
+            font-size: 36px;
+        }
+        #section1 img {
             margin: 20px 0;
+            width: 400px;
         }
-        p {
-            font-size: 1.5em;
-            margin: 0 0 20px 0;
+        #section1 p.small-text {
+            font-size: 18px;
+            max-width: 900px;
         }
-        img {
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #section-parallax {
+            height: 500px;
+            background: url('./rsr-dt-x20-grass-2.jpg') center center / cover no-repeat fixed;
+            color: white;
+            flex-direction: column;
+            position: relative;
+        }
+        #section2 {
+            min-height: 700px;
+            background: url('./bg-dark-orange.png') center center / cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #section2 .description {
+            max-width: 1000px;
+            font-size: 22px;
+        }
+        #section2 img {
+            margin-top: 20px;
             max-width: 100%;
             height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-                white-space: normal; /* Allow text to wrap */
-            }
+        #section3, #section4, #section5 {
+            height: 800px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
-
-        @keyframes gradientMovement {
-            0% {
-                background-position: 0% 0%;
+        #section3 {
+            background-color: #ffffff;
+            color: black;
+        }
+        #section4 {
+            background-color: #77a8f3;
+            color: white;
+        }
+        #section5 {
+            background-color: #083489;
+            color: white;
+        }
+        #section3 .description, #section4 .description, #section5 .description {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 600px;
+            font-size: 20px;
+        }
+        #section3 img, #section4 img, #section5 img {
+            max-width: 50%;
+            height: auto;
+        }
+        #section3 .description {
+            text-align: left;
+            order: 1;
+        }
+        #section3 img {
+            order: 2;
+        }
+        #section4 .description {
+            text-align: right;
+            order: 2;
+        }
+        #section4 img {
+            order: 1;
+        }
+        #section5 .description {
+            text-align: left;
+            order: 1;
+        }
+        #section5 img {
+            order: 2;
+            padding-left:50px;
+        }
+        @media (max-width: 768px) {
+            #section2 .description {
+                max-width: 90%;
+                font-size: 22px;
             }
-            100% {
-                background-position: 100% 100%;
+            #section3, #section4, #section5 {
+                flex-direction: column;
             }
+            #section3 .description, #section4 .description, #section5 .description {
+                width: 90% !important;
+            }
+            #section3 .description, #section4 .description, #section5 .description,
+            #section3 img, #section4 img, #section5 img {
+                order: 1;
+                text-align: center;
+            }
+            #section4 .description, #section5 .description {
+                order: 2;
+            }
+        #section5 img {
+            padding-left:0px !important;
+        }
+        }
+        #section6 {
+            height: 500px;
+            background: url('./rsr-dt-x20-grass.jpg') center center / cover no-repeat fixed;
+            color: white;
+            flex-direction: column;
+            position: relative;
+        }
+        #specification {
+            margin: 0 auto;
+            max-width:800px;
+            display:block !important;
+            text-align: left !important;
+            background-color: #ffffff;
+            color: black;
+        }
+        .standard-section {
+            height: 800px;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 600px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Introducing</h1>
-        <img width="400" src="rsr-logo.png" alt="RSR Logo">
-        <h1>DirectTorque X20</h1>
-        <br/>
-        <br/>
-        <p>A 20Nm direct drive wheelbase. Built with the spirit of DIY. Powered by Open FFBoard. Experience precision and control like never before.</p>
-        <p>Launching Soon. Stay Tuned!</p>
+
+<section id="section1">
+    <h1>Introducing</h1>
+    <img src="rsr-logo.png" alt="RSR Logo">
+    <h2>DirectTorque X20</h2>
+    <p class="small-text">
+        A 20Nm direct drive wheelbase. Built with the spirit of DIY. Powered by OpenFFBoard.
+        Experience precision and control like never before.
+    </p>
+</section>
+
+<section id="section-parallax">
+</section>
+
+<section id="section2">
+    <div class="description">
+        <p>
+            The RSR team goal is to elevate the immersion of racing simulation. We deliver the premier sim racing experience by supplying both top-quality hardware and endless innovations. What began as the enthusiasm of passionate DIY builders and sim racers has transformed into a well-engineered product for serious and pro sim racing gamers like you.
+        </p>
     </div>
+</section>
+
+<section id="section3">
+    <div class="description">
+        <p>
+            RSR DT X20 is powered by refurbished servo motor, Dorna 130DNA. We have carefully selected and tested each unit to make sure it meets our quality standard. The 20Nm peak torque is giving us a wide headroom for feedback detail. We also upgraded the encoder with a high resolution magnetic encoder (16384ppr). Whether you want the feedback detail to be smooth as butter or sharp as knife, so be it.
+        </p>
+    </div>
+    <img src="servo.jpg" alt="Servo Motor">
+</section>
+
+<section id="section4">
+    <img src="pcb.jpg" alt="PCB">
+    <div class="description">
+        <p>
+            We designed and iterated our own PCBs. They are exclusively built and engineered for RSR DT product lines. This way we have full control of innovation and improvement. With our own PCB, we are able to transform the servo motor into a sleek appearance by eliminating the bulky power and encoder sockets. No more messy cables.
+        </p>
+    </div>
+</section>
+
+<section id="section6">
+</section>
+
+<section id="section5">
+    <div class="description">
+        <p>We owe a great deal to the free and open-source software that helped us reach where we are today. We have paired OpenFFBoard firmware with our RSR Paddock software to deliver easy way to control your wheelbase. We are keen to giving back to community by contributing back to OpenFFBoard and open sourced our own software.</p>
+    </div>
+    <img src="rsr-paddock.png">
+</section>
+
+
+<section id="specification">
+    <h2>Product Features:</h2>
+    <ul>
+        <li>Peak Torque: 20 Nm</li>
+        <li>Compatible with a wide range of games</li>
+        <li>USB type C port for communication</li>
+        <li>USB Hub 4 ports for additional peripherals</li>
+        <li>4-pin Molex connector for Emergency Stop (sold separately)</li>
+        <li>RSR Paddock software for wheelbase configuration</li>
+    </ul>
+    
+</section>
+<section id="specification">
+    <h2>Specification:</h2>
+    <ul>
+        <li>Platform: Windows PC</li>
+        <li>Drive Type: direct drive</li>
+        <li>Servo motor: Refurbished Dorna 130DNA</li>
+        <li>Base Torque: 9.55 Nm</li>
+        <li>Peak Torque: 20 Nm</li>
+        <li>Max Wheel Rotation: 1440 degree</li>
+        <li>Encoder: High resolution magnetic encoder, 16384ppr</li>
+        <li>Servo Housing Material: aluminium</li>
+        <li>PCB Housing Material: 3D print ABS</li>
+        <li>Color: Black/White</li>
+        <li>Power: average 180 watt, max 360w</li>
+        <li>Power Supply Input Voltage: 110V~220V AC</li>
+        <li>Power Supply Output Voltage: 48V DC</li>
+        <li>USB Refresh Rate: 1000Hz</li>
+        <li>USB Hub Function: supported, USB 2.0 type A</li>
+        <li>Boss kit: included (70mm)</li>
+        <li>Quick Release: N/A</li>
+        <li>Connection Ports: DC Input, E-stop, USB, USB Hub</li>
+        <li>Power Indicator: RGB LED</li>
+        <li>Accessories: user manual, power supply, data cable, bracket</li>
+        <li>Method: 4 holes bottom mount</li>
+        <li>Emergency Stop Switch: supported via 4-pin molex connector (sold separately)</li>
+        <li>Mounting bracket: included (4mm steel plates)</li>
+    </ul>
+</section>
+
 </body>
 </html>
